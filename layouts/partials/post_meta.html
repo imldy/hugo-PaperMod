@@ -5,8 +5,8 @@
 {{- end }}
 
 <!-- 对比详细时间 -->
-{{ $date := .Date.Format (default "January 2, 2006" site.Params.DateFormat) }}
-{{ $lastmod := .Lastmod.Format (default "January 2, 2006" site.Params.DateFormat) }}
+{{ $date := .Date.Format "02.01.2006" }}
+{{ $lastmod := .Lastmod.Format "02.01.2006" }}
 {{- if ne $lastmod $date -}}
 {{- $scratch.Add "meta" (slice (printf "<span title='%s'>( 更新于 %s )</span>" (.Lastmod) (.Lastmod | time.Format (default "January 2, 2006" site.Params.DateFormat)))) }}
 {{- end }}
